@@ -32,7 +32,7 @@ double calcCalories({required int steps, required double weightKg, double met = 
 }
 
 double kcalPerStep(double weightKg, {double met = 3.8, double cadencePerMin = 100}) =>
-    calcCalories(steps: cadencePerMin, weightKg: weightKg, met: met, cadencePerMin: cadencePerMin) / cadencePerMin;
+    calcCalories(steps: cadencePerMin.round(), weightKg: weightKg, met: met, cadencePerMin: cadencePerMin) / cadencePerMin;
 
 /// طول قدم تقریبی بر اساس قد (حدود ۴۱٪ قد) — متر
 double strideLength(double heightCm) => heightCm > 0 ? heightCm * 0.414 / 100 : 0.70;

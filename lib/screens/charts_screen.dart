@@ -260,7 +260,7 @@ class _ChartsScreenState extends State<ChartsScreen> {
         titlesData: _titles([for (final d in data) d.$1], scheme),
         lineTouchData: LineTouchData(
           touchTooltipData: LineTouchTooltipData(
-            tooltipBgColor: def.color,
+            getTooltipColor: (_) => def.color,
             getTooltipItems: (spots) => [
               for (final s in spots)
                 LineTooltipItem(
@@ -302,7 +302,7 @@ class _ChartsScreenState extends State<ChartsScreen> {
       titlesData: _titles([for (final d in data) d.$1], scheme),
       barTouchData: BarTouchData(
         touchTooltipData: BarTouchTooltipData(
-          tooltipBgColor: def.color,
+          getTooltipColor: (_) => def.color,
           getTooltipItem: (group, gi, rod, ri) => BarTooltipItem(
             '${faDigits(data[group.x.toInt()].$1)}: ${faNum(rod.toY)} ${def.unit}',
             const TextStyle(color: Colors.white, fontSize: 11, fontFamily: 'Vazirmatn'),
